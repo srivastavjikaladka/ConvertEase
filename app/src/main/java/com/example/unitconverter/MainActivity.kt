@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.unitconverter.ui.theme.UnitConverterTheme
+import com.example.unitconverter.ui.unitConverter
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    UnitConverter()
+                    unitConverter()
 
 
                 }
@@ -45,54 +46,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+
 @Preview(showBackground = true)
 @Composable
-fun UnitConverter() {
-    Column (modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ){
+fun unitConverterPreview(){
+    unitConverter()
 
-        // Here all UI elements will be stacked below each other
-        Text("Unit Converter")
-        OutlinedTextField(value = "Enter Value", onValueChange = {})
-
-        Row {
-            Box {
-                Button(onClick = { /*TODO*/ }) {
-                    Text("Select")
-                    Icon(
-                        Icons.Default.ArrowDropDown,
-                        contentDescription = "Arrow Down"
-                    )
-
-
-                }
-
-
-            }
-            Box {
-                Button(onClick = { /*TODO*/ }) {
-                    Text("Select")
-                    Icon(
-                        Icons.Default.ArrowDropDown,
-                        contentDescription = "Arrow Down"
-                    )
-                }
-            }
-            Text("Result:")
-
-
-        }
-
-    }
-
-
-
-
-    @Composable
-    fun UnitConverterPreview() {
-        UnitConverter()
-
-    }
 }
